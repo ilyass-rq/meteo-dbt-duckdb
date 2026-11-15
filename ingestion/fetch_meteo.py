@@ -15,4 +15,4 @@ response = requests.get(url, params=params)
 print(response.url)
 
 data=response.json()
-print(data["daily"])
+print(data["daily"]["time"])
