@@ -14,5 +14,17 @@ params = {
 response = requests.get(url, params=params)
 print(response.url)
 
+
 data=response.json()
-print(data["daily"]["time"])
+# print(data["daily"]["temperature_2m_max"])
+
+
+ville = "paris"
+dates = data["daily"]["time"]
+temp_max = data["daily"]["temperature_2m_max"]
+temp_min = data["daily"]["temperature_2m_min"]
+lignes = []
+for date, tmax, tmin in zip(dates,temp_max,temp_min):
+    lignes.append({"ville": ville, "date":date, "temperature_max":tmax,"temperature_min":tmin})
+print(lignes)
+
