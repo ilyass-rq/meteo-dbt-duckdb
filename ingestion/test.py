@@ -13,3 +13,10 @@ for v in villes:
     print(v["nom"],v["lat"])
  
 
+# dates = data["daily"]["time"]
+# temp_max = data["daily"]["temperature_2m_max"]
+# temp_min = data["daily"]["temperature_2m_min"]
+# lignes = []
+# for date, tmax, tmin in zip(dates,temp_max,temp_min):
+#     lignes.append({"ville": ville, "date":date, "temperature_max":tmax,"temperature_min":tmin})
+# print(lignes)
