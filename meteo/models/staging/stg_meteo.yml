@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_meteo
+    columns:
+      - name: ville
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['paris', 'lyon','marseille']
+      - name: date_meteo
+        data_tests:
+          - not_null
+
+      - name: temperature_max
+        data_tests:
+          - not_null:
+              config:
+                severity: warn
+
+      - name: temperature_min
+        data_tests:
+          - not_null:
+              config:
+                severity: warn              
+
+      
