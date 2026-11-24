@@ -2,6 +2,12 @@ version: 2
 
 models:
   - name: stg_meteo
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - ville
+              - date_meteo
     columns:
       - name: ville
         data_tests:
